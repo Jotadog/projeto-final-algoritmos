@@ -27,7 +27,7 @@ void cadastrar(){
     printf("\nColoque o nome completo: ");
     scanf(" %[^\n]s",&clientes[id].nome);
 
-    printf("\nColoque o CPF sem formatação: ");
+    printf("\nColoque o CPF sem formataÃ§Ã£o: ");
     scanf("%s",&clientes[id].cpf);
 
     printf("\nColoque o sexo (masculino/feminino): ");
@@ -36,7 +36,7 @@ void cadastrar(){
     printf("\nColoque a data de nascimento no formato XX/XX/XXXX: ");
     scanf("%s",&clientes[id].dataNascimento);
     
-    printf("\nColoque o telefone sem formatação: ");
+    printf("\nColoque o telefone sem formataÃ§Ã£o: ");
     scanf("%s",&clientes[id].telefone);
     
     printf("\nColoque o email: ");
@@ -49,43 +49,43 @@ void excluir(int codigo){
 }
 
 void consultarCod(int codigo){
-	int verificar=0;
+	int verificar = 0;
 	system("cls");
 	if(codigo != 0){
 		for(i=0;i<tam;i++){
 			if(clientes[i].codigo == codigo){
-				printf("\nDados do cliente n° %i\nNome: %s\nSexo: %s\nData de nascimento: %s\nCPF: %s\nTelefone: %i\nE-mail: %s\n",clientes[i].codigo,clientes[i].nome,clientes[i].sexo,clientes[i].dataNascimento,clientes[i].cpf,clientes[i].telefone,clientes[i].email);
+				printf("\nDados do cliente nÂ° %i\nNome: %s\nSexo: %s\nData de nascimento: %s\nCPF: %s\nTelefone: %i\nE-mail: %s\n",clientes[i].codigo,clientes[i].nome,clientes[i].sexo,clientes[i].dataNascimento,clientes[i].cpf,clientes[i].telefone,clientes[i].email);
 				verificar++;
 			}
 		}
 	} 
 	if(verificar==0){
-		printf("\nEsse cliente não está cadastrado!");
+		printf("\nEsse cliente nÃ£o estÃ¡ cadastrado!");
 	}
 	printf("\n_______________________________\n");
 }
 
 void consultarNome(char nome[]){
-	int codigo=0;
+	int codigo = 0;
 	system("cls");
 	if(strcmp(nome,"")!=0){
 		for(i=0;i<tam;i++){
 			if(strcmp(nome,clientes[i].nome)==0){
 				codigo = i;
-				printf("\nDados do cliente n° %i\nNome: %s\nSexo: %s\nData de nascimento: %s\nCPF: %s\nTelefone: %i\nE-mail: %s\n",clientes[codigo].codigo,clientes[codigo].nome,clientes[codigo].sexo,clientes[codigo].dataNascimento,clientes[codigo].cpf,clientes[codigo].telefone,clientes[codigo].email);
+				printf("\nDados do cliente nÂ° %i\nNome: %s\nSexo: %s\nData de nascimento: %s\nCPF: %s\nTelefone: %i\nE-mail: %s\n",clientes[codigo].codigo,clientes[codigo].nome,clientes[codigo].sexo,clientes[codigo].dataNascimento,clientes[codigo].cpf,clientes[codigo].telefone,clientes[codigo].email);
 				printf("\n_______________________________\n");
 			}
 		}	
 	}
 	if(codigo == 0){
-		printf("\nEsse cliente não está cadastrado!\n");
+		printf("\nEsse cliente nÃ£o estÃ¡ cadastrado!\n");
 	}
 }
 void listar(){
 	system("cls");
 	for(i=0;i<tam;i++){
 		if(clientes[i].codigo != 0){
-			printf("\nCliente de código %i: %s\n",clientes[i].codigo,clientes[i].nome);	
+			printf("\nCliente de cÃ³digo %i: %s\n",clientes[i].codigo,clientes[i].nome);	
 			printf("_______________________________\n");
 		}
 	}
@@ -113,8 +113,8 @@ void alterar(int codigo){
 	confirm[0] = '0';
 	if(codigo != 0){
 		do{
-			printf("\nQual informação deseja alterar?\n");
-			printf("\n1 - Nome: %s\n2 - Sexo: %s\n3 - Data de nascimento: %s\n4 - CPF: %s\n5 - Telefone: %i\n6 - E-mail: %s\nSua opção: ",clientes[codigo].nome,clientes[codigo].sexo,clientes[codigo].dataNascimento,clientes[codigo].cpf,clientes[codigo].telefone,clientes[codigo].email);
+			printf("\nQual informaÃ§Ã£o deseja alterar?\n");
+			printf("\n1 - Nome: %s\n2 - Sexo: %s\n3 - Data de nascimento: %s\n4 - CPF: %s\n5 - Telefone: %i\n6 - E-mail: %s\nSua opÃ§Ã£o: ",clientes[codigo].nome,clientes[codigo].sexo,clientes[codigo].dataNascimento,clientes[codigo].cpf,clientes[codigo].telefone,clientes[codigo].email);
 			fflush(stdin);
 			opcao[0] = getche();
 			
@@ -144,9 +144,9 @@ void alterar(int codigo){
 					scanf("%s",&clientes[codigo].email);
 					break;
 				default:
-					printf("\nOpção inválida!");
+					printf("\nOpÃ§Ã£o invÃ¡lida!");
 			}
-			printf("\nContinuar editando? 0 para sim e 1 para não: ");
+			printf("\nContinuar editando? 0 para sim e 1 para nÃ£o: ");
 			confirm[0] = getche();
 		}while(confirm[0] !='1');
 		
@@ -166,39 +166,35 @@ int main(){
     printf("\nCadstro de clientes HyperSoft\n_____________________________\n");
 	Sleep(500);
     do{
-        printf("\n\nSelecione uma opção:\n\n");
+        printf("\n\nSelecione uma opÃ§Ã£o:\n\n");
         printf("1 - Cadastro do cliente\n");
         printf("2 - Alterar dados do cliente\n");
-        printf("3 - Exclusão de cliente\n");
+        printf("3 - ExclusÃ£o de cliente\n");
         printf("4 - Consultar cliente\n");
         printf("5 - Listar clientes\n");
         printf("6 - Sair\n");
-        printf("Sua opção: ");
+        printf("Sua opÃ§Ã£o: ");
         
         fflush(stdin);
         opcao[0] = getche();
-        
 		system("cls");
-		
         switch(opcao[0]){
         	system("cls");
             case '1':
                 cadastrar();
             	break;
             case '2':
-            	printf("\nInsira o código do cliente a ser alterado: ");
+            	printf("\nInsira o cÃ³digo do cliente a ser alterado: ");
             	scanf("%i",&param);
 				alterar(param);
            		break;
-
             case '3':
-				printf("\nInsira o código do cliente a ser exclúido: ");
+				printf("\nInsira o cÃ³digo do cliente a ser exclÃºido: ");
             	scanf("%i",&param);
 				excluir(param);
             	break;
-
             case '4':
-            	printf("\n1 - Consultar por nome\n2 - Consultar por código\n3 - Voltar\nSua opção: ");
+            	printf("\n1 - Consultar por nome\n2 - Consultar por cÃ³digo\n3 - Voltar\nSua opÃ§Ã£o: ");
             	fflush(stdin);
             	escolha[0] = getche();
             	switch(escolha[0]){
@@ -208,28 +204,25 @@ int main(){
             			consultarNome(paramChar);
             			break;
             		case '2':	
-						printf("\nInsira o código do cliente a ser consultado: ");
+						printf("\nInsira o cÃ³digo do cliente a ser consultado: ");
 						scanf("%i",&param);
 						consultarCod(param);
 						break;	
 					case '3':
 						break;
 					default:
-						printf("\nOpção mal informada");
+						printf("\nOpÃ§Ã£o mal informada");
 				}
             	break;
-
             case '5':
-				listar();
+		listar();
             	break;
-
             case '6':
                 printf("\nPressione 1 para sair: ");
                 flag[0] = getche();
             	break;
-
             default:
-				printf("\nEstá opção não existe\n");
+		printf("\nEstÃ¡ opÃ§Ã£o nÃ£o existe\n");
             	break;
         }
     }while(flag[0] != '1');
